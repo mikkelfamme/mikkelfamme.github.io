@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guides og råd om computeren – Famme Fix | Hvidovre</title>
+  <meta name="description" content="Praktiske guides til de problemer jeg oftest hjælper med. Skrevet i et sprog alle kan forstå – ingen fagudtryk, ingen forudsætninger.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.fammefix.dk/blog">
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Blog","name":"Famme Fix – Guides og råd","url":"https://www.fammefix.dk/blog","author":{"@type":"Person","name":"Mikkel Famme"},"description":"Praktiske guides til de mest almindelige computerproblemer. Skrevet til folk der ikke er tekniske."}</script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--white:#ffffff;--off:#f8f7f5;--border:#e2e0dc;--text:#1a1a18;--muted:#6b6b67;--accent:#2a5c45;--warm:#f0ece4;--max:1100px;--font-body:'DM Sans',sans-serif;--font-head:'Lora',Georgia,serif}
+    html{scroll-behavior:smooth}
+    body{font-family:var(--font-body);background:var(--white);color:var(--text);font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:var(--max);margin:0 auto;padding:0 24px}
+
+    header{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+    nav{display:flex;align-items:center;justify-content:space-between;height:68px;gap:12px}
+    .logo{font-family:var(--font-head);font-size:22px;font-weight:600;color:var(--accent);flex-shrink:0}
+    .logo span{color:var(--text);font-weight:400}
+    .nav-links{display:flex;gap:20px;list-style:none;flex:1;justify-content:center}
+    .nav-links a{font-size:14px;font-weight:500;color:var(--muted);transition:color .2s;white-space:nowrap}
+    .nav-links a:hover{color:var(--accent)}
+    .nav-cta{background:var(--accent)!important;color:#fff!important;padding:8px 18px;border-radius:6px;font-weight:600!important}
+    .nav-cta-btn{background:var(--accent);color:#fff;font-weight:700;font-size:14px;padding:9px 18px;border-radius:6px;white-space:nowrap;flex-shrink:0}
+    .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+    .hamburger span{display:block;width:24px;height:2px;background:var(--text);border-radius:2px}
+
+    .page-hero{padding:80px 0 64px;background:var(--off);border-bottom:1px solid var(--border)}
+    .breadcrumb{font-size:13px;color:var(--muted);margin-bottom:16px}
+    .breadcrumb a{color:var(--accent)}
+    .breadcrumb a:hover{text-decoration:underline}
+    .page-hero h1{font-family:var(--font-head);font-size:clamp(30px,4vw,46px);font-weight:600;line-height:1.2;letter-spacing:-.02em;margin-bottom:16px}
+    .page-hero p{font-size:18px;color:var(--muted);line-height:1.65}
+
+    /* Article list */
+    .article-list{padding:72px 0}
+    .article-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-bottom:72px}
+    .article-card{background:var(--white);border:1px solid var(--border);border-radius:10px;overflow:hidden;transition:box-shadow .2s;display:flex;flex-direction:column}
+    .article-card:hover{box-shadow:0 6px 28px rgba(0,0,0,.07)}
+    .article-thumb{height:120px;background:var(--accent);display:flex;align-items:center;justify-content:center;font-size:40px}
+    .article-body{padding:22px 20px;flex:1;display:flex;flex-direction:column}
+    .article-tag{font-size:11px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
+    .article-card h2{font-family:var(--font-head);font-size:17px;line-height:1.35;margin-bottom:10px}
+    .article-card p{font-size:14px;color:var(--muted);line-height:1.6;margin-bottom:16px;flex:1}
+    .article-read{font-size:13px;font-weight:600;color:var(--accent)}
+    .article-read:hover{text-decoration:underline}
+
+    /* Full articles */
+    .article-full{padding:80px 0;border-top:1px solid var(--border)}
+    .article-full:nth-child(even){background:var(--off)}
+    .article-inner{max-width:760px}
+    .article-meta{font-size:13px;color:var(--muted);margin-bottom:28px;padding-bottom:16px;border-bottom:1px solid var(--border)}
+    .article-inner h1{font-family:var(--font-head);font-size:clamp(26px,3.5vw,36px);font-weight:600;line-height:1.25;margin-bottom:16px;letter-spacing:-.015em}
+    .article-inner h2{font-family:var(--font-head);font-size:21px;font-weight:600;margin:32px 0 12px}
+    .article-inner p{color:var(--muted);font-size:16px;line-height:1.75;margin-bottom:16px}
+    .article-inner ul,.article-inner ol{padding-left:22px;margin-bottom:16px}
+    .article-inner li{color:var(--muted);font-size:16px;line-height:1.75;margin-bottom:8px}
+    .article-inner strong{color:var(--text)}
+
+    .article-cta{background:var(--warm);border:1px solid var(--border);border-radius:10px;padding:24px 28px;margin-top:32px;display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+    .article-cta p{font-size:15px;color:var(--text);margin:0;flex:1}
+    .btn-sm{background:var(--accent);color:#fff;padding:10px 20px;border-radius:6px;font-weight:600;font-size:14px;white-space:nowrap;transition:background .2s}
+    .btn-sm:hover{background:#1e4433}
+
+    footer{background:var(--text);color:rgba(255,255,255,.7);padding:40px 0 28px}
+    .footer-bottom{display:flex;justify-content:space-between;font-size:13px;flex-wrap:wrap;gap:8px}
+    .footer-logo{font-family:var(--font-head);font-size:18px;font-weight:600;color:#fff;margin-bottom:12px}
+    .footer-logo span{color:rgba(255,255,255,.5);font-weight:400}
+
+    @media(max-width:900px){
+      .article-grid{grid-template-columns:1fr 1fr}
+      .nav-links{display:none}
+      .nav-cta-btn{display:none}
+      .hamburger{display:flex}
+      .nav-links.open{display:flex;flex-direction:column;position:absolute;top:68px;left:0;right:0;background:var(--white);border-bottom:1px solid var(--border);padding:20px 24px;gap:16px;z-index:99}
+    }
+    @media(max-width:600px){
+      .article-grid{grid-template-columns:1fr}
+      .page-hero{padding:56px 0 48px}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav class="container">
+    <a href="/" class="logo">Famme<span> Fix</span></a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="/#ydelser">Hvad hjælper jeg med?</a></li>
+      <li><a href="/#priser">Priser</a></li>
+      <li><a href="ommig.html">Om mig</a></li>
+      <li><a href="blog.html" style="color:var(--accent)">Guides</a></li>
+      <li><a href="oftestilledespørgsmål.html">FAQ</a></li>
+      <li><a href="/#kontakt" class="nav-cta">Bestil hjælp nu</a></li>
+    </ul>
+    <a href="/#kontakt" class="nav-cta-btn">Bestil hjælp nu</a>
+    <button class="hamburger" onclick="document.getElementById('nav-links').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>
+
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Famme Fix</a> → Guides og råd</div>
+    <h1>Guides til de problemer jeg oftest hjælper med</h1>
+    <p>Skrevet i et sprog alle kan forstå. Ingen fagudtryk, ingen forudsætninger. Prøv selv – og ring hvis du sidder fast.</p>
+  </div>
+</div>
+
+<!-- ARTICLE OVERVIEW -->
+<section class="article-list">
+  <div class="container">
+    <div class="article-grid">
+      <div class="article-card">
+        <div class="article-thumb">🐢</div>
+        <div class="article-body">
+          <div class="article-tag">Computer</div>
+          <h2>Hvorfor er min computer blevet langsom?</h2>
+          <p>De mest almindelige årsager – og hvad du selv kan gøre ved det.</p>
+          <a href="#langsom-computer" class="article-read">Læs guide →</a>
+        </div>
+      </div>
+      <div class="article-card">
+        <div class="article-thumb">🦠</div>
+        <div class="article-body">
+          <div class="article-tag">Sikkerhed</div>
+          <h2>Har jeg virus på computeren?</h2>
+          <p>Tegnene du skal kigge efter – og hvad du gør hvis du finder noget.</p>
+          <a href="#virus" class="article-read">Læs guide →</a>
+        </div>
+      </div>
+      <div class="article-card">
+        <div class="article-thumb">📶</div>
+        <div class="article-body">
+          <div class="article-tag">Internet</div>
+          <h2>Wifi virker ikke – 7 ting du kan prøve</h2>
+          <p>En trin-for-trin tjekliste inden du ringer efter hjælp.</p>
+          <a href="#wifi" class="article-read">Læs guide →</a>
+        </div>
+      </div>
+      <div class="article-card">
+        <div class="article-thumb">💻</div>
+        <div class="article-body">
+          <div class="article-tag">Ny computer</div>
+          <h2>Ny computer: det første du bør gøre</h2>
+          <p>En ny computer er ikke klar fra kassen. Her er hvad du skal gøre de første dage.</p>
+          <a href="#ny-computer" class="article-read">Læs guide →</a>
+        </div>
+      </div>
+      <div class="article-card">
+        <div class="article-thumb">💾</div>
+        <div class="article-body">
+          <div class="article-tag">Sikkerhed</div>
+          <h2>Backup: spar dig selv for tabet af dine billeder</h2>
+          <p>Enkelt, automatisk og gratis. Sådan gør du det.</p>
+          <a href="#backup" class="article-read">Læs guide →</a>
+        </div>
+      </div>
+      <div class="article-card">
+        <div class="article-thumb">🖨️</div>
+        <div class="article-body">
+          <div class="article-tag">Printer</div>
+          <h2>Printeren vil ikke printe – de 5 hyppigste årsager</h2>
+          <p>Printere er notorisk besværlige. Her er de typiske synder.</p>
+          <a href="#printer" class="article-read">Læs guide →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARTIKEL 1 -->
+<article class="article-full" id="langsom-computer">
+  <div class="container">
+    <div class="article-inner">
+      <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Hvorfor er min computer blevet langsom – og hvad gør jeg?","author":{"@type":"Person","name":"Mikkel Famme"},"publisher":{"@type":"Organization","name":"Famme Fix"},"dateModified":"2025-03-01","description":"De mest almindelige årsager til en langsom computer – og hvad du selv kan gøre ved det."}</script>
+      <div class="article-tag">Computer</div>
+      <h1>Hvorfor er min computer blevet langsom – og hvad gør jeg?</h1>
+      <div class="article-meta">Af Mikkel Famme · Famme Fix · Opdateret 2025 · Computerhjælp i Hvidovre</div>
+
+      <p>En langsom computer er et af de aller hyppigste problemer. Jeg løser det næsten ugentligt hos folk i Hvidovre og omegn – og den gode nyhed er at årsagen i langt de fleste tilfælde er fundet og rettet inden for en time.</p>
+
+      <h2>De mest almindelige årsager til en langsom computer</h2>
+      <ul>
+        <li><strong>For mange programmer starter automatisk</strong> – Hver gang du tænder computeren starter en lang række programmer i baggrunden uden du ved det. Det sluger hukommelse og gør opstarten langsommere.</li>
+        <li><strong>Fuld harddisk</strong> – Windows og macOS har brug for fri plads til at arbejde. Har du under 10–15 % fri plads tilbage, mærker du det tydeligt på farten.</li>
+        <li><strong>Forældet Windows</strong> – Et Windows der ikke er opdateret kan opføre sig langsomt og mærkeligt. Opdateringer lapper fejl og forbedrer hastigheden.</li>
+        <li><strong>Malware og adware</strong> – Skadelig software kører i baggrunden og bruger din computers ressourcer uden at spørge om lov.</li>
+        <li><strong>Overophedning</strong> – En computer der er for varm sænker bevidst farten for at beskytte sig selv. Støv i ventilatoren er en hyppig synder – især i ældre computere.</li>
+        <li><strong>For lidt RAM</strong> – Har du en ældre computer med 4 GB RAM og kører Windows 11, er det tæt på umuligt at arbejde hurtigt. Det kan i mange tilfælde opgraderes.</li>
+      </ul>
+
+      <h2>Hvad kan du selv prøve?</h2>
+      <ol>
+        <li>Genstart computeren – lyder simpelt, men løser overraskende mange problemer</li>
+        <li>Sørg for Windows er opdateret: Indstillinger → Windows Update → Søg efter opdateringer</li>
+        <li>Tjek diskplads: Åbn Stifinder → Denne pc – er den næsten fuld, er det tid til oprydning</li>
+        <li>Kør en scanning med Windows Defender: søg på "Windows sikkerhed" i startmenuen</li>
+      </ol>
+
+      <h2>Hvornår skal du tilkalde hjælp?</h2>
+      <p>Hvis computeren stadig er langsom efter ovenstående trin, er problemet sandsynligvis mere teknisk – overophedning, for lidt RAM eller en harddisk der er ved at gå i stykker. Kontakt Famme Fix, og jeg kommer hjem til dig i Hvidovre eller omegn og finder problemet.</p>
+
+      <div class="article-cta">
+        <p>Computeren stadig langsom? Jeg kommer hjem og løser det – diagnose 299 kr.</p>
+        <a href="/#kontakt" class="btn-sm">Bestil besøg</a>
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- ARTIKEL 2 -->
+<article class="article-full" id="virus">
+  <div class="container">
+    <div class="article-inner">
+      <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Har jeg virus på min computer? Sådan genkender og fjerner du det","author":{"@type":"Person","name":"Mikkel Famme"},"publisher":{"@type":"Organization","name":"Famme Fix"},"dateModified":"2025-03-01","description":"Tegn på virus og malware på computeren – og hvad du gør ved det."}</script>
+      <div class="article-tag">Sikkerhed</div>
+      <h1>Har jeg virus på min computer? Sådan genkender og fjerner du det</h1>
+      <div class="article-meta">Af Mikkel Famme · Famme Fix · Opdateret 2025 · Computerhjælp i Hvidovre</div>
+
+      <p>Virus og malware er desværre udbredt – og mange opdager det først når skaden er sket. Jeg hjælper jævnligt folk i Hvidovre og omegn med at rydde op, og i de fleste tilfælde er det ikke en katastrofe – men noget der kan ordnes hurtigt hvis man handler.</p>
+
+      <h2>Tegn på at din computer kan have virus</h2>
+      <ul>
+        <li>Computeren er blevet markant langsommere uden nogen klar årsag</li>
+        <li>Der dukker reklamer op på steder de ikke plejer – i browseren eller på skrivebordet</li>
+        <li>Din browser åbner hjemmesider du ikke har bedt om</li>
+        <li>Programmer du ikke genkender er installeret</li>
+        <li>Din antivirussoftware er slukket og du ved ikke hvorfor</li>
+        <li>Du har fået en advarsel fra Windows – men er ikke sikker på om den er ægte</li>
+      </ul>
+
+      <h2>Hvad du kan gøre selv</h2>
+      <ol>
+        <li>Kør en fuld scanning med Windows Defender: søg på "Windows sikkerhed" → Virus- og trusselsbeskyttelse → Hurtig scanning</li>
+        <li>Download og kør Malwarebytes Free – det er gratis og meget effektivt mod adware og malware</li>
+        <li>Skift dine vigtigste adgangskoder fra en anden enhed (f.eks. din telefon) hvis du mistænker at noget er galt</li>
+      </ol>
+
+      <h2>Hvornår skal du tilkalde hjælp?</h2>
+      <p>Hvis du ikke er sikker på hvad du kigger på, hvis problemet vender tilbage, eller hvis advarsler popper op der siger du skal ringe et nummer – så er det tid til professionel hjælp. Kontakt Famme Fix, og jeg kommer hjem til dig og rydder grundigt op.</p>
+
+      <div class="article-cta">
+        <p>Mistænker du virus eller malware? Jeg finder og fjerner det – diagnose 299 kr.</p>
+        <a href="/#kontakt" class="btn-sm">Bestil besøg</a>
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- ARTIKEL 3 -->
+<article class="article-full" id="wifi">
+  <div class="container">
+    <div class="article-inner">
+      <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Wifi virker ikke – 7 ting du kan prøve selv","author":{"@type":"Person","name":"Mikkel Famme"},"publisher":{"@type":"Organization","name":"Famme Fix"},"dateModified":"2025-03-01","description":"Trin-for-trin tjekliste til wifi-problemer – hvad du prøver selv inden du ringer efter hjælp."}</script>
+      <div class="article-tag">Internet</div>
+      <h1>Wifi virker ikke – 7 ting du kan prøve selv</h1>
+      <div class="article-meta">Af Mikkel Famme · Famme Fix · Opdateret 2025 · Computerhjælp i Hvidovre</div>
+
+      <p>Et wifi der ikke virker kan have mange årsager. Her er en praktisk tjekliste du kan gå igennem inden du ringer efter hjælp – trin 1 løser faktisk problemet i overraskende mange tilfælde.</p>
+
+      <h2>Tjeklisten</h2>
+      <ol>
+        <li><strong>Genstart routeren</strong> – tag stikket ud, vent 30 sekunder, sæt det i igen. Løser en overraskende stor del af alle wifi-problemer.</li>
+        <li><strong>Genstart din computer eller telefon</strong> – en simpel genstart på din enhed kan se ud som et netværksproblem men faktisk sidde i enheden.</li>
+        <li><strong>Tjek om andre enheder har samme problem</strong> – virker wifi på telefonen men ikke på computeren, er problemet i computeren, ikke routeren.</li>
+        <li><strong>Glem netværket og opret forbindelsen igen</strong> – på Windows: Indstillinger → Netværk og internet → Wifi → Administrer kendte netværk → find dit netværk og klik Glem.</li>
+        <li><strong>Flyt tættere på routeren</strong> – wifi-signalet svækkes markant bag vægge, gulve og møbler.</li>
+        <li><strong>Opdater netværksdriveren</strong> – søg på "Enhedshåndtering" i startmenuen, find dit netværkskort og opdater driveren.</li>
+        <li><strong>Ring til din internetudbyder</strong> – er der udfald i dit område? Så er det internetforbindelsen der er nede, ikke wifi. Check på udbyderens hjemmeside eller ring til dem.</li>
+      </ol>
+
+      <h2>Hjælper ingen af dem?</h2>
+      <p>Hvis wifi stadig ikke virker efter ovenstående trin, er problemet sandsynligvis teknisk – en defekt router, en fejlkonfiguration, eller noget i computerens netværksopsætning. Kontakt Famme Fix, og jeg finder årsagen.</p>
+
+      <div class="article-cta">
+        <p>Wifi stadig et mysterium? Jeg finder og løser det – diagnose 299 kr.</p>
+        <a href="/#kontakt" class="btn-sm">Bestil besøg</a>
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- ARTIKEL 4 -->
+<article class="article-full" id="ny-computer">
+  <div class="container">
+    <div class="article-inner">
+      <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Ny computer: det første du bør gøre – og det du bør undgå","author":{"@type":"Person","name":"Mikkel Famme"},"publisher":{"@type":"Organization","name":"Famme Fix"},"dateModified":"2025-03-01","description":"Hvad du gør med en ny computer de første dage – og hvad du undgår."}</script>
+      <div class="article-tag">Ny computer</div>
+      <h1>Ny computer: det første du bør gøre – og det du bør undgå</h1>
+      <div class="article-meta">Af Mikkel Famme · Famme Fix · Opdateret 2025 · Computerhjælp i Hvidovre</div>
+
+      <p>En ny computer er ikke klar til optimal brug fra kassen. Her er hvad du bør gøre de første dage – og hvad du bør lade være med.</p>
+
+      <h2>Gør dette først</h2>
+      <ul>
+        <li><strong>Opdater Windows</strong> – det kan tage lang tid, så gør det straks. Indstillinger → Windows Update → Søg efter opdateringer.</li>
+        <li><strong>Opsæt automatisk backup</strong> til OneDrive (det er allerede installeret) eller en ekstern disk. Gør det inden du begynder at gemme vigtige filer.</li>
+        <li><strong>Afinstaller unødvendig software</strong> – nye computere kommer med programmer du ikke har bedt om (såkaldt bloatware). Gå til Indstillinger → Apps og fjern dem du ikke bruger.</li>
+        <li><strong>Sørg for Windows Defender er slået til</strong> – søg på "Windows sikkerhed" og tjek at alt er grønt.</li>
+      </ul>
+
+      <h2>Undgå dette</h2>
+      <ul>
+        <li>Accepter ikke alle apps der beder om adgang til kamera, mikrofon eller kontakter uden at læse hvad de vil bruge det til</li>
+        <li>Installer ikke antivirus fra ukendte leverandører – Windows Defender er godt nok</li>
+        <li>Brug ikke den samme adgangskode til alle dine konti</li>
+      </ul>
+
+      <div class="article-cta">
+        <p>Vil du have hjælp til at sætte din nye computer rigtigt op? Jeg kommer hjem til dig.</p>
+        <a href="/#kontakt" class="btn-sm">Bestil opsætning</a>
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- ARTIKEL 5 -->
+<article class="article-full" id="backup">
+  <div class="container">
+    <div class="article-inner">
+      <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Sikkerhedskopiering: hvorfor du skal gøre det, og hvordan","author":{"@type":"Person","name":"Mikkel Famme"},"publisher":{"@type":"Organization","name":"Famme Fix"},"dateModified":"2025-03-01","description":"Enkelt, automatisk og gratis backup – sådan gør du det så du aldrig mister dine billeder."}</script>
+      <div class="article-tag">Sikkerhed</div>
+      <h1>Backup af dine billeder og filer – nemmere end du tror</h1>
+      <div class="article-meta">Af Mikkel Famme · Famme Fix · Opdateret 2025 · Computerhjælp i Hvidovre</div>
+
+      <p>Hvert år mister folk tusindvis af billeder og dokumenter fordi computeren gik i stykker – og der ikke var en sikkerhedskopi. Det er et af de mest forebyggelige problemer i hele IT-verdenen.</p>
+
+      <h2>Hvad er en backup og hvorfor er den vigtig?</h2>
+      <p>En backup er simpelthen en kopi af dine filer på et andet sted. Hvis computeren går i stykker, bliver stjålet eller taber en harddisk, er dine billeder, dokumenter og e-mails stadig i sikkerhed.</p>
+
+      <h2>De nemmeste løsninger</h2>
+      <ul>
+        <li><strong>OneDrive</strong> – er allerede installeret på din Windows-computer og synkroniserer automatisk dine vigtige mapper. Du får 5 GB gratis.</li>
+        <li><strong>Ekstern harddisk</strong> – en gang om ugen kopieres vigtige mapper til en disk du sætter i computeren. Koster fra ca. 300 kr. i en elektronikbutik.</li>
+        <li><strong>Windows Backup</strong> – den indbyggede funktion i Windows der automatisk tager kopier af dine filer. Søg på "Backup-indstillinger" i startmenuen.</li>
+      </ul>
+
+      <h2>Reglen der holder dine data i sikkerhed</h2>
+      <p>IT-folk anbefaler det der hedder 3-2-1-reglen: tre kopier af dine data, på to forskellige medier, hvoraf én er et andet sted end hjemme. I praksis: computeren + ekstern disk + OneDrive. Det er mere end nok til private brugere.</p>
+
+      <div class="article-cta">
+        <p>Vil du have hjælp til at opsætte automatisk backup der bare virker?</p>
+        <a href="/#kontakt" class="btn-sm">Bestil hjælp</a>
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- ARTIKEL 6 -->
+<article class="article-full" id="printer">
+  <div class="container">
+    <div class="article-inner">
+      <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Printeren virker ikke – de 5 mest almindelige årsager","author":{"@type":"Person","name":"Mikkel Famme"},"publisher":{"@type":"Organization","name":"Famme Fix"},"dateModified":"2025-03-01","description":"De 5 hyppigste årsager til at printeren ikke vil printe – og hvad du gør ved dem."}</script>
+      <div class="article-tag">Printer</div>
+      <h1>Printeren vil ikke printe – de 5 mest almindelige årsager</h1>
+      <div class="article-meta">Af Mikkel Famme · Famme Fix · Opdateret 2025 · Computerhjælp i Hvidovre</div>
+
+      <p>Printere er notorisk dårlige til at virke præcis når man har brug for dem. Her er de fem hyppigste årsager – og hvad du kan gøre ved dem.</p>
+
+      <h2>De fem syndere</h2>
+      <ol>
+        <li>
+          <strong>Printerkøen er låst</strong> – et dokument der sidder fast i køen blokerer for alt andet. Åbn Enheder og printere (søg i startmenuen), højreklik på din printer og vælg "Se hvad der udskrives" → slet alle dokumenter i køen.
+        </li>
+        <li>
+          <strong>Forkert standardprinter</strong> – Windows har valgt en anden printer som standard. Gå til Indstillinger → Bluetooth og enheder → Printere og scannere og tjek at den rigtige er valgt.
+        </li>
+        <li>
+          <strong>Forældet driver</strong> – printerdriveren er ikke kompatibel med din Windows-version. Gå til printerproducentens hjemmeside og download den nyeste driver til din printermodel.
+        </li>
+        <li>
+          <strong>Printeren er offline</strong> – selvom den er tændt og tilsluttet. Prøv at slette printeren fra Windows og tilføj den igen: Indstillinger → Printere og scannere → fjern printeren → tilføj den på ny.
+        </li>
+        <li>
+          <strong>Netværksprinteren er på et andet netværk</strong> – hvis du har fået ny router eller ændret wifi-navn, er din netværksprinter ikke længere tilgængelig. Den skal opsættes igen med det nye netværk.
+        </li>
+      </ol>
+
+      <div class="article-cta">
+        <p>Stadig ingen print? Jeg finder synderen og løser det – diagnose 299 kr.</p>
+        <a href="/#kontakt" class="btn-sm">Bestil besøg</a>
+      </div>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="container">
+    <div class="footer-logo">Famme<span> Fix</span></div>
+    <div class="footer-bottom">
+      <span>© 2025 Famme Fix – Mikkel Famme</span>
+      <span>Computerhjælp i Hvidovre og omegn | fammefix.dk</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

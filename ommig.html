@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Om mig – Mikkel Famme | Famme Fix computerhjælp Hvidovre</title>
+  <meta name="description" content="Jeg hedder Mikkel Famme og hjælper folk i Hvidovre og omegn med computeren og teknikken. Læs om hvem jeg er, og hvorfor jeg startede Famme Fix.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.fammefix.dk/ommig">
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Mikkel Famme","url":"https://www.fammefix.dk/ommig","jobTitle":"Computerhjælper og grundlægger, Famme Fix","worksFor":{"@type":"LocalBusiness","name":"Famme Fix","url":"https://www.fammefix.dk"},"knowsAbout":["computerhjælp","wifi","virus","Windows","macOS","hardware","software","smartphone","tablet"],"areaServed":"Hvidovre og omegn, Danmark"}</script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--white:#ffffff;--off:#f8f7f5;--border:#e2e0dc;--text:#1a1a18;--muted:#6b6b67;--accent:#2a5c45;--warm:#f0ece4;--max:1100px;--font-body:'DM Sans',sans-serif;--font-head:'Lora',Georgia,serif}
+    html{scroll-behavior:smooth}
+    body{font-family:var(--font-body);background:var(--white);color:var(--text);font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased}
+    img{max-width:100%;display:block}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:var(--max);margin:0 auto;padding:0 24px}
+
+    header{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+    nav{display:flex;align-items:center;justify-content:space-between;height:68px;gap:12px}
+    .logo{font-family:var(--font-head);font-size:22px;font-weight:600;color:var(--accent);flex-shrink:0}
+    .logo span{color:var(--text);font-weight:400}
+    .nav-links{display:flex;gap:20px;list-style:none;flex:1;justify-content:center}
+    .nav-links a{font-size:14px;font-weight:500;color:var(--muted);transition:color .2s;white-space:nowrap}
+    .nav-links a:hover{color:var(--accent)}
+    .nav-cta{background:var(--accent)!important;color:#fff!important;padding:8px 18px;border-radius:6px;font-weight:600!important}
+    .nav-cta-btn{background:var(--accent);color:#fff;font-weight:700;font-size:14px;padding:9px 18px;border-radius:6px;white-space:nowrap;flex-shrink:0}
+    .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+    .hamburger span{display:block;width:24px;height:2px;background:var(--text);border-radius:2px}
+
+    .page-hero{padding:80px 0 64px;background:var(--off);border-bottom:1px solid var(--border)}
+    .page-hero .breadcrumb{font-size:13px;color:var(--muted);margin-bottom:16px}
+    .page-hero .breadcrumb a{color:var(--accent)}
+    .page-hero .breadcrumb a:hover{text-decoration:underline}
+    .page-hero h1{font-family:var(--font-head);font-size:clamp(32px,4vw,48px);font-weight:600;line-height:1.2;letter-spacing:-.02em;margin-bottom:16px}
+    .page-hero p{font-size:18px;color:var(--muted);max-width:560px;line-height:1.65}
+
+    .content-section{padding:80px 0}
+    .content-inner{display:grid;grid-template-columns:300px 1fr;gap:72px;align-items:flex-start}
+    .about-photo{width:100%;aspect-ratio:1/1;background:var(--accent);border-radius:16px;display:flex;align-items:center;justify-content:center;overflow:hidden;max-width:280px}
+    .about-photo img{width:100%;height:100%;object-fit:cover;border-radius:16px}
+    .about-initials{font-family:var(--font-head);font-size:72px;color:rgba(255,255,255,.9);font-weight:600}
+    .about-facts{margin-top:24px;display:flex;flex-direction:column;gap:12px}
+    .fact{display:flex;gap:10px;align-items:center;font-size:14px;color:var(--muted)}
+    .fact strong{color:var(--text)}
+
+    .prose h2{font-family:var(--font-head);font-size:26px;font-weight:600;margin:40px 0 14px;letter-spacing:-.01em}
+    .prose h2:first-child{margin-top:0}
+    .prose p{color:var(--muted);font-size:17px;line-height:1.75;margin-bottom:18px}
+    .prose ul{padding-left:20px;margin-bottom:18px}
+    .prose li{color:var(--muted);font-size:17px;line-height:1.75;margin-bottom:8px}
+
+    .cta-box{background:var(--off);border:1px solid var(--border);border-radius:14px;padding:36px 32px;margin-top:48px;text-align:center}
+    .cta-box h3{font-family:var(--font-head);font-size:22px;margin-bottom:10px}
+    .cta-box p{color:var(--muted);margin-bottom:24px}
+    .btn-primary{background:var(--accent);color:#fff;padding:14px 28px;border-radius:8px;font-weight:600;font-size:16px;display:inline-block;transition:background .2s}
+    .btn-primary:hover{background:#1e4433}
+
+    footer{background:var(--text);color:rgba(255,255,255,.7);padding:40px 0 28px}
+    .footer-bottom{display:flex;justify-content:space-between;font-size:13px;flex-wrap:wrap;gap:8px}
+    .footer-logo{font-family:var(--font-head);font-size:18px;font-weight:600;color:#fff;margin-bottom:12px}
+    .footer-logo span{color:rgba(255,255,255,.5);font-weight:400}
+
+    @media(max-width:900px){
+      .content-inner{grid-template-columns:1fr}
+      .nav-links{display:none}
+      .nav-cta-btn{display:none}
+      .hamburger{display:flex}
+      .nav-links.open{display:flex;flex-direction:column;position:absolute;top:68px;left:0;right:0;background:var(--white);border-bottom:1px solid var(--border);padding:20px 24px;gap:16px;z-index:99}
+    }
+    @media(max-width:600px){.page-hero{padding:56px 0 48px}}
+  </style>
+</head>
+<body>
+
+<header>
+  <nav class="container">
+    <a href="/" class="logo">Famme<span> Fix</span></a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="/#ydelser">Hvad hjælper jeg med?</a></li>
+      <li><a href="/#priser">Priser</a></li>
+      <li><a href="ommig.html" style="color:var(--accent)">Om mig</a></li>
+      <li><a href="blog.html">Guides</a></li>
+      <li><a href="oftestilledespørgsmål.html">FAQ</a></li>
+      <li><a href="/#kontakt" class="nav-cta">Bestil hjælp nu</a></li>
+    </ul>
+    <a href="/#kontakt" class="nav-cta-btn">Bestil hjælp nu</a>
+    <button class="hamburger" onclick="document.getElementById('nav-links').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>
+
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Famme Fix</a> → Om mig</div>
+    <h1>Jeg hedder Mikkel – og jeg er din lokale computer-hjælper</h1>
+    <p>Ikke et firma. Ikke en butik. En rigtig person der faktisk møder op – og bliver til problemet er løst.</p>
+  </div>
+</div>
+
+<section class="content-section">
+  <div class="container">
+    <div class="content-inner">
+      <div>
+        <div class="about-photo">
+          <div class="about-initials">MF</div>
+        </div>
+        <div class="about-facts">
+          <div class="fact">📍 <span><strong>Hvidovre og omegn</strong></span></div>
+          <div class="fact">🕐 <span><strong>Tilgængelig alle dage</strong> – 08.00–20.00</span></div>
+          <div class="fact">💰 <span><strong>299 kr.</strong> diagnose + 299 kr./t</span></div>
+          <div class="fact">⚡ <span><strong>Svar samme dag</strong> – oftest inden for timer</span></div>
+        </div>
+      </div>
+
+      <div class="prose">
+        <h2>Hvorfor Famme Fix?</h2>
+        <p>
+          Jeg startede Famme Fix fordi jeg gang på gang oplevede det samme: folk der sidder med et teknisk problem de ikke kan løse, og som ikke ved hvem de skal ringe til. De store butikker beder dem om at aflevere computeren og vente i flere uger. De tekniske hotlines sætter dem i kø med ventemusik.
+        </p>
+        <p>
+          Jeg synes det er unødigt. De fleste problemer kan løses på stedet – hos dig – på under et par timer. Det kræver bare nogen der gider møde op og tage sig tid.
+        </p>
+
+        <h2>Hvem er jeg egentlig?</h2>
+        <p>
+          Jeg hedder Mikkel Famme og bor i Hvidovre-området. Jeg har arbejdet med IT, computere og teknik i mange år – ikke som IT-chef i en stor virksomhed, men på den praktiske måde der faktisk giver mening i folks hverdag.
+        </p>
+        <p>
+          Jeg kender forskel på et hardware-problem og et software-problem. Jeg ved hvornår en computer kan reddes, og hvornår den ikke kan. Og vigtigst: jeg ved hvordan man forklarer det til nogen der ikke har valgt at bruge deres liv på teknik.
+        </p>
+
+        <h2>Sådan arbejder jeg</h2>
+        <p>
+          Jeg møder op til den aftalte tid. Jeg kigger på problemet og fortæller dig hvad der er galt – på dansk, ikke i fagsprog. Jeg spørger om du vil have det løst, og hvad det vil koste. Og så løser jeg det.
+        </p>
+        <p>
+          Jeg stresser ikke. Jeg sparer ikke på forklaringerne. Og jeg går ikke min vej til du er tryg ved at bruge din computer igen.
+        </p>
+
+        <h2>Hvad jeg hjælper med</h2>
+        <ul>
+          <li>Langsomme computere og computere der er gået i stå</li>
+          <li>Virus, malware og underlig software der er dukket op</li>
+          <li>Wifi og internet der ikke virker som det skal</li>
+          <li>Printer-opsætning og printer-problemer</li>
+          <li>Ny computer – opsætning, filoverførsel og programmering</li>
+          <li>Backup af billeder, dokumenter og vigtige filer</li>
+          <li>Smartphone og tablet – synkronisering, apps og opsætning</li>
+          <li>Smart-tv og streaming-tjenester</li>
+          <li>Og alt muligt andet der handler om teknik derhjemme</li>
+        </ul>
+
+        <h2>Hvad jeg ikke er</h2>
+        <p>
+          Jeg er ikke en sælger. Jeg prøver aldrig at sælge dig noget du ikke har bedt om – hverken hardware, software eller abonnementer. Min interesse er at løse dit problem og give dig den forklaring du har brug for. Ingenting mere.
+        </p>
+
+        <div class="cta-box">
+          <h3>Har du et problem der driller?</h3>
+          <p>Skriv til mig – jeg svarer samme dag og vi finder et tidspunkt der passer dig.</p>
+          <a href="/#kontakt" class="btn-primary">Bestil et besøg</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-logo">Famme<span> Fix</span></div>
+    <div class="footer-bottom">
+      <span>© 2025 Famme Fix – Mikkel Famme</span>
+      <span>Computerhjælp i Hvidovre og omegn | fammefix.dk</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
