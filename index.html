@@ -129,6 +129,27 @@
     .price-box p{font-size:14px;color:var(--muted);line-height:1.6}
     .price-note{margin-top:24px;font-size:14px;color:var(--muted)}
 
+    /* KONKURRENT-SAMMENLIGNING */
+    .price-compare{margin-top:40px;max-width:760px}
+    .price-compare-label{font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+    .price-compare-grid{display:flex;flex-direction:column;gap:10px;margin-bottom:12px}
+    .compare-row{display:grid;grid-template-columns:180px 1fr 1fr auto;gap:12px;align-items:center;padding:14px 20px;border-radius:10px;font-size:14px}
+    .compare-them{background:#faf9f7;border:1px solid var(--border);color:var(--muted)}
+    .compare-me{background:var(--accent);color:#fff;font-weight:500}
+    .compare-name{font-weight:600;font-size:15px}
+    .compare-them .compare-name{color:var(--text)}
+    .compare-me .compare-name{color:#fff}
+    .compare-total{font-weight:700;font-size:15px;text-align:right;white-space:nowrap}
+    .compare-them .compare-total{color:var(--text)}
+    .compare-me .compare-total{color:#fff}
+    .compare-me .compare-detail,.compare-me .compare-extra{color:rgba(255,255,255,0.8)}
+    .compare-note{font-size:12px;color:var(--muted);font-style:italic}
+    @media(max-width:700px){
+      .compare-row{grid-template-columns:1fr 1fr;gap:6px;padding:12px 16px}
+      .compare-name{grid-column:1/-1;font-size:14px}
+      .compare-total{grid-column:1/-1;text-align:left}
+    }
+
     /* SECTIONS */
     .section-tag{display:inline-block;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
     .section-title{font-family:var(--font-head);font-size:clamp(25px,3.5vw,38px);line-height:1.22;font-weight:600;letter-spacing:-.015em;margin-bottom:16px}
@@ -320,12 +341,39 @@
         <p>Jeg kigger grundigt på problemet og fortæller dig hvad der er galt og hvad det vil koste at løse. Du bestemmer derefter selv.</p>
       </div>
       <div class="price-box featured">
-        <h3>Løsning</h3>
+        <h3>Timepris</h3>
         <div class="amount">299</div>
         <div class="amount-sub">kr./t inkl. moms – ingen transportgebyr</div>
         <p>De fleste problemer løses inden for 1–2 timer. Du betaler kun den aftalte timepris – intet andet.</p>
       </div>
     </div>
+
+    <!-- Konkurrent-sammenligning -->
+    <div class="price-compare">
+      <div class="price-compare-label">Hvad tager andre?</div>
+      <div class="price-compare-grid">
+        <div class="compare-row compare-them">
+          <span class="compare-name">Typisk IT-firma</span>
+          <span class="compare-detail">599 kr. pr. halve time</span>
+          <span class="compare-extra">+ transportgebyr 199 kr.</span>
+          <span class="compare-total">= fra 998 kr./t</span>
+        </div>
+        <div class="compare-row compare-them">
+          <span class="compare-name">Stor elektronikbutik</span>
+          <span class="compare-detail">Fra 699 kr. pr. time</span>
+          <span class="compare-extra">+ du skal køre derhen og vente</span>
+          <span class="compare-total">= fra 699 kr./t + besvær</span>
+        </div>
+        <div class="compare-row compare-me">
+          <span class="compare-name">Famme Fix</span>
+          <span class="compare-detail">299 kr./t inkl. moms</span>
+          <span class="compare-extra">Ingen transportgebyr – jeg kommer til dig</span>
+          <span class="compare-total">= 299 kr./t, alt inkl.</span>
+        </div>
+      </div>
+      <p class="compare-note">Priserne på konkurrenter er vejledende baseret på offentligt tilgængelige listepriser, marts 2025.</p>
+    </div>
+
     <p class="price-note">Betaling via MobilePay, kontant eller bankoverførsel. Ingen kortgebyr. Kvittering udleveres altid.</p>
   </div>
 </section>
@@ -610,7 +658,7 @@
         <div class="contact-detail">
           <div class="contact-detail-icon">✉️</div>
           <div class="contact-detail-text">
-            <strong>mikkel@fammefix.dk</strong>
+            <strong><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d0bdb9bbbbb5bc90b6b1bdbdb5b6b9a8feb4bb">[email&#160;protected]</a></strong>
             <span>Svar inden for 24 timer</span>
           </div>
         </div>
@@ -677,17 +725,11 @@
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   function toggleNav(){document.getElementById('nav-links').classList.toggle('open')}
   document.querySelectorAll('#nav-links a').forEach(function(l){l.addEventListener('click',function(){document.getElementById('nav-links').classList.remove('open')})});
   function submitForm(){
     var n=document.getElementById('name').value.trim();
     var e=document.getElementById('email').value.trim();
     var m=document.getElementById('message').value.trim();
-    if(!n||!e||!m){alert('Udfyld venligst alle obligatoriske felter.');return;}
-    document.getElementById('form-fields').style.display='none';
-    document.getElementById('form-success').style.display='block';
-  }
-</script>
-</body>
-</html>
+    if(!n||!e
